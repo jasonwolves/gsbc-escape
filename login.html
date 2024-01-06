@@ -15,10 +15,14 @@ function check_form()
   if(login_attempts==0)
   {
    alert("No Login Attempts Available");
+   setTimeout(function(){  
+    var element = document.getElementsByName("submit")[0] ;
+    element.disabled = false;
+}, 90000);
   }
   else
   {
-   login_attempts=login_attempts-1.5;
+   login_attempts=login_attempts-1;
    alert("Login Failed Now Only "+login_attempts+" Login Attempts Available");
    if(login_attempts==0)
    {
